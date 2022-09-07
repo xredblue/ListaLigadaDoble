@@ -21,11 +21,12 @@ public class ListaD {
         else {
             if (x <=primero.info){
                 temp.sig =primero;
-               // primero.ant = temp;
-               // temp.sig = primero;
+                primero.ant = temp;
                 primero = temp;
-                ultimo.sig = primero;
                 primero.ant = ultimo;
+                ultimo.sig = primero;
+               // ultimo.sig = primero;
+                //primero.ant = ultimo;
             } else if (x >= ultimo.info) {
                 temp.ant = ultimo;// equivalente decir que ultimo.sig = temp;???
                 ultimo.sig = temp;
@@ -71,13 +72,12 @@ public class ListaD {
     }*/
 
     public void mostrar(){
+        raiz = primero;
         NodoD aux = raiz;
         while (aux!=ultimo){
             System.out.print(raiz.info + " ");
             aux = raiz.sig;
             raiz = aux;
-
-
         }
         System.out.println(raiz.info);
     }
