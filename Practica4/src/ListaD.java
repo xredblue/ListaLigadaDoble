@@ -20,8 +20,9 @@ public class ListaD {
         }
         else {
             if (x <=primero.info){
-                primero.ant = temp;
-                temp.sig = primero;
+                temp.sig =primero;
+               // primero.ant = temp;
+               // temp.sig = primero;
                 primero = temp;
                 ultimo.sig = primero;
                 primero.ant = ultimo;
@@ -52,8 +53,8 @@ public class ListaD {
         aux = raiz.sig;
         raiz = aux;
         System.out.print(raiz.info + " ");
-
     }
+
     public void recorrerIzquierda(){
        NodoD aux = raiz;
        aux = raiz.ant;
@@ -62,13 +63,22 @@ public class ListaD {
 
     }
 
-    public void eliminar(){
+    /*public int eliminar( int y ){
         NodoD aux = raiz;
+        NodoD an = null;
+        NodoD si = null;
 
+    }*/
 
-    }
     public void mostrar(){
-       NodoD aux = raiz;
+        NodoD aux = raiz;
+        while (aux!=ultimo){
+            System.out.print(raiz.info + " ");
+            aux = raiz.sig;
+            raiz = aux;
 
+
+        }
+        System.out.println(raiz.info);
     }
 }
